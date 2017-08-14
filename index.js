@@ -53,4 +53,3 @@ restMinus.addEventListener('click', function() {
 
     timer.restMinusMin();
 });
-
