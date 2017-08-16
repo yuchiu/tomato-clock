@@ -1,0 +1,97 @@
+:root {
+  --size: 330px;
+}
+
+#clock {
+  width: var(--size);
+  height: var(--size);
+  background-color: transparent;
+  border: 3px solid #ffad87;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 black;
+  position: relative;
+}
+
+#secHand {
+  width: 2px;
+  height: 50%;
+  background-color: #ffad87;
+  transform-origin: 50% 80%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  opacity: 0.4;
+}
+
+#minHand {
+  width: 4px;
+  height: 40%;
+  background-color: #ffad87;
+  transform-origin: 50% 80%;
+  position: absolute;
+  top: 18%;
+  left: calc(50% - 1px);
+  opacity: 0.4;
+}
+
+.num {
+  height: 100%;
+  position: absolute;
+  left: calc(50% - 0.5em);
+}
+
+.num div {
+  width: 1em;
+  line-height: 2em;
+  color: #ffad87;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.num1 {
+  transform: rotate(30deg);
+}
+
+.num2 {
+  transform: rotate(60deg);
+}
+
+.num3 {
+  transform: rotate(90deg);
+}
+
+.num4 {
+  transform: rotate(120deg);
+}
+
+.num5 {
+  transform: rotate(150deg);
+}
+
+.num6 {
+  transform: rotate(180deg);
+}
+
+.num7 {
+  transform: rotate(210deg);
+}
+
+.num8 {
+  transform: rotate(240deg);
+}
+
+.num9 {
+  transform: rotate(270deg);
+}
+
+.num10 {
+  transform: rotate(300deg);
+}
+
+.num11 {
+  transform: rotate(330deg);
+}
+
+.num12 {
+  transform: rotate(0deg);
+}

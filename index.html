@@ -1,6 +1,5 @@
-
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -12,66 +11,104 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
         crossorigin="anonymous">
-    <link rel="stylesheet" href = "./main.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/clock.css">
 </head>
 
 <body>
 
     <div class="container ">
         <div class='row'>
-            <div class='display-4 mx-auto mt-5 text-muted'>Pomodoro Clock</div>
-        </div>     
-        <div class='row'>
-            <div class='display-4 mx-auto mt-5 text-muted' id="breakTime">Enjoy your break!</div>
-        </div>      
-        <div class='row'>
-            <div class='display-4 mx-auto mt-5 text-muted' id="timerEnded">Session ended, click reset to reset the clock.</div>
+            <div class='display-4 mx-auto mt-5'>Pomodoro Clock</div>
         </div>
         <div class='row '>
-                <button type="button" class="btn btn-secondary btn-secondary mx-auto mt-5" id = "toggle" style='border-radius:40px'>Start</button>
+            <button type="button" class="btn btn-secondary btn-secondary mx-auto mt-5" id="toggle" style='border-radius:40px'>Start</button>
         </div>
         <div class='row'>
-            <div class='display-1 mx-auto mt-3' id="timer">25 : 00</div>
+            <div id="clock" class="mx-auto mt-5">
+                <div class="num num1">
+                    <div>|</div>
+                </div>
+                <div class="num num2">
+                    <div>|</div>
+                </div>
+                <div class="num num3">
+                    <div>|</div>
+                </div>
+                <div class="num num4">
+                    <div>|</div>
+                </div>
+                <div class="num num5">
+                    <div>|</div>
+                </div>
+                <div class="num num6">
+                    <div>|</div>
+                </div>
+                <div class="num num7">
+                    <div>|</div>
+                </div>
+                <div class="num num8">
+                    <div>|</div>
+                </div>
+                <div class="num num9">
+                    <div>|</div>
+                </div>
+                <div class="num num10">
+                    <div>|</div>
+                </div>
+                <div class="num num11">
+                    <div>|</div>
+                </div>
+                <div class="num num12">
+                    <div>|</div>
+                </div>
+                <div class='display-4 mx-auto mt-5' id="timer">25 : 00</div>
+                <div id="minHand"></div>
+                <div id="secHand"></div>
+            </div>
         </div>
         <div class='row'>
-            <div class='lead  mx-auto mt-5'>Rest</div>
-            <div class='lead  mx-auto mt-5'>Work</div>
+            <div class='lead  mx-auto mt-4'>Rest</div>
+            <div class='lead  mx-auto mt-4'>Work</div>
         </div>
         <div class='row'>
             <div class='display-4 mt-2 mx-auto'>
-                <button type="button" class="btn btn-secondary" id = "restMinus">-</button>
+                <button type="button" class="btn btn-secondary operatorBtn" id="restMinus">-</button>
             </div>
             <div class='display-4 mt-2'>
-            <div  id="restTimer">05 : 00</div>
+                <div id="restTimer">05 : 00</div>
             </div>
             <div class='display-4 mt-2 mx-auto'>
-                <button type="button" class="btn btn-secondary" id = "restAdd">+</button>
+                <button type="button" class="btn btn-secondary operatorBtn" id="restAdd">+</button>
             </div>
 
 
             <div class=' mt-4'>
-                <button type="button" class="btn btn-secondary btn-secondary" id = "reset" style='border-radius:40px'>Reset</button>
+                <button type="button" class="btn btn-secondary btn-secondary" id="reset" style='border-radius:40px'>Reset</button>
             </div>
 
 
             <div class='display-4 mt-2 mx-auto'>
-                <button type="button" class="btn btn-secondary" id = "workMinus">-</button> 
+                <button type="button" class="btn btn-secondary operatorBtn" id="workMinus">-</button>
             </div>
             <div class='display-4 mt-2'>
-            <div  id="workTimer">25 : 00</div>
+                <div id="workTimer">25 : 00</div>
             </div>
             <div class='display-4 mt-2 mx-auto'>
-                <button type="button" class="btn btn-secondary" id = "workAdd">+</button>
+                <button type="button" class="btn btn-secondary operatorBtn " id="workAdd">+</button>
             </div>
         </div>
-                
-        <div class='row'>
-            <div class='display-4 mx-auto mt-5 text-muted' id="timerStarted">The timer for work has started.</div>
-        </div> 
     </div>
+
+    <div class='row'>
+        <div class='display-4 mx-auto mt-5 text-muted' id="message"></div>
+    </div>
+    </div>
+    <audio id="sound" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  <script src='app.js'></script>
-  <script src='index.js'></script>
+    <script src='./js/app.js'></script>
+    <script src='./js/index.js'></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"

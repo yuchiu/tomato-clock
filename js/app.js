@@ -1,71 +1,21 @@
 function PomoTimer(elem) {
-  var time = 1500000;
-  var restTime = 300000;
-  var interval;
-  var offset;
+  let time = 1500000;
+  let restTime = 300000;
+  let interval;
+  let offset;
 
   this.isOn = false;
   this.workTimerIsOn = true;
-  timerStarted.style.display = 'none';
-  breakTime.style.display = 'none';
-  timerEnded.style.display = 'none';
 
-  function update() {
-    if (this.isOn) {
-      var timePassed = delta();
-      time -= timePassed;
-    }
+  updateClock();
 
-    if (time > 600) {
-      if (this.workTimerIsOn) {
-        var formattedTime = timeFormatter(time);
-        elem.textContent = formattedTime;
-        workTimer.textContent = formattedTime;
-
-      } else if (this.workTimerIsOn === false) {
-        var formattedTime = timeFormatter(time);
-        elem.textContent = formattedTime;
-        restTimer.textContent = formattedTime;
-      }
-
-    } else if (this.workTimerIsOn) {
-      this.isOn = false;
-      this.restStart();
-    } else {
-      this.isOn = false;
-      this.sessionEnd();
-    }
-  }
-
-  function delta() {
-    var now = Date.now();
-    var timePassed = now - offset;
-    offset = now;
-    return timePassed;
-  }
-
-  function timeFormatter(timeInMilliseconds) {
-    var time = new Date(timeInMilliseconds);
-    var minutes = time.getMinutes().toString();
-    var seconds = time.getSeconds().toString();
-
-
-    if (minutes.length < 2) {
-      minutes = '0' + minutes;
-    }
-
-    if (seconds.length < 2) {
-      seconds = '0' + seconds;
-    }
-
-    return minutes + ' : ' + seconds;
-  }
   this.start = function () {
     if (!this.isOn) {
       interval = setInterval(update.bind(this), 10);
       offset = Date.now();
       this.isOn = true;
-      timerStarted.style.display = 'block';
+      startClock();
+      message.innerHTML = "Timer has Started."
     }
   };
 
@@ -93,9 +43,7 @@ function PomoTimer(elem) {
     restMinus.disabled = false;
     toggleBtn.disabled = false;
 
-    timerStarted.style.display = 'none';
-    breakTime.style.display = 'none';
-    timerEnded.style.display = 'none';
+    message.innerHTML = "";
 
     update();
   };
@@ -106,17 +54,15 @@ function PomoTimer(elem) {
     this.workTimerIsOn = false;
     workAdd.disabled = true;
     workMinus.disabled = true;
-    breakTime.style.display = 'block';
-  timerStarted.style.display = 'none';
+
+    message.innerHTML = "Enjoy your Break.";
     update();
   }
   this.sessionEnd = function () {
     restAdd.disabled = true;
     restMinus.disabled = true;
     toggleBtn.disabled = true;
-    breakTime.style.display = 'none';
-    timerEnded.style.display = 'block';
-    playSound();
+    message.innerHTML = "Timer Ended."
   }
 
   this.workAddMin = function () {
@@ -124,6 +70,7 @@ function PomoTimer(elem) {
       time += 60000;
       timer.textContent = timeFormatter(time);
       workTimer.textContent = timeFormatter(time);
+      updateClock();
       update();
     }
   }
@@ -133,6 +80,7 @@ function PomoTimer(elem) {
       time -= 60000;
       timer.textContent = timeFormatter(time);
       workTimer.textContent = timeFormatter(time);
+      updateClock();
       update();
     }
 
@@ -144,6 +92,7 @@ function PomoTimer(elem) {
         restTime += 60000;
         restTimer.textContent = timeFormatter(restTime);
         update();
+        updateClock();
 
       }
     } else {
@@ -153,6 +102,7 @@ function PomoTimer(elem) {
         timer.textContent = timeFormatter(time);
         restTimer.textContent = timeFormatter(time);
         update();
+        updateClock();
 
       }
     }
@@ -165,6 +115,7 @@ function PomoTimer(elem) {
         restTime -= 60000;
         restTimer.textContent = timeFormatter(restTime);
         update();
+        updateClock();
       }
 
     } else {
@@ -173,8 +124,80 @@ function PomoTimer(elem) {
         timer.textContent = timeFormatter(time);
         restTimer.textContent = timeFormatter(time);
         update();
+        updateClock();
       }
     }
   }
-  
+
+  function startClock() {
+    let clock = setInterval(function () {
+      updateClock();
+    }, 1000);
+  }
+
+  function updateClock() {
+    secHand.transform = "rotate(" + calculateSec() * 6 + "deg)";
+    minHand.transform = "rotate(" + calculateMin() * 6 + "deg)";
+  }
+
+  function update() {
+    if (this.isOn) {
+      let timePassed = delta();
+      time -= timePassed;
+    }
+
+    if (time > 600) {
+      if (this.workTimerIsOn) {
+        let formattedTime = timeFormatter(time);
+        elem.textContent = formattedTime;
+        workTimer.textContent = formattedTime;
+
+      } else if (this.workTimerIsOn === false) {
+        let formattedTime = timeFormatter(time);
+        elem.textContent = formattedTime;
+        restTimer.textContent = formattedTime;
+      }
+
+    } else if (this.workTimerIsOn) {
+      this.isOn = false;
+      this.restStart();
+    } else {
+      this.isOn = false;
+      this.sessionEnd();
+    }
+  }
+
+  function delta() {
+    let now = Date.now();
+    let timePassed = now - offset;
+    offset = now;
+    return timePassed;
+  }
+
+  function timeFormatter(timeInMilliseconds) {
+    let time = new Date(timeInMilliseconds);
+    let minutes = time.getMinutes().toString();
+    let seconds = time.getSeconds().toString();
+
+
+    if (minutes.length < 2) {
+      minutes = '0' + minutes;
+    }
+
+    if (seconds.length < 2) {
+      seconds = '0' + seconds;
+    }
+    return minutes + ' : ' + seconds;
+  }
+
+  function calculateMin() {
+    let minute = Math.floor(time / 60000);
+    return minute;
+  }
+
+  function calculateSec() {
+    let sec = time % 60000
+    sec = Math.floor(sec / 1000);
+    return sec;
+  }
 }

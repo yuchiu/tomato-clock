@@ -1,0 +1,42 @@
+body {
+	background: #2b303a;
+	color: #d19481
+}
+
+#timer {
+	text-align: center;
+}
+
+#clock {
+	color: #ffa589;
+}
+
+.btn {
+	background-color: transparent;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 2px solid #bc9587;
+	display: inline-block;
+	cursor: pointer;
+	color: #bc9587;
+	font-family: Arial;
+	font-size: 21px;
+	padding: 6px 15px;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background-color: transparent;
+	color: #ffddce;
+}
+
+.btn:active {
+	position: relative;
+	top: 1px;
+}
+
+.operatorBtn {
+	border: none;
+	font-size: 0.5em;
+}
