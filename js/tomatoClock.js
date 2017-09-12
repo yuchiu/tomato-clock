@@ -11,6 +11,7 @@ function PomoTimer(elem) {
 
   this.start = function () {
     if (!this.isOn) {
+      toggleBtn.textContent = 'Pause';
       interval = setInterval(update.bind(this), 10);
       offset = Date.now();
       this.isOn = true;
@@ -21,6 +22,7 @@ function PomoTimer(elem) {
 
   this.stop = function () {
     if (this.isOn) {
+      toggleBtn.textContent = 'Start';
       clearInterval(interval);
       interval = null;
       this.isOn = false;
@@ -55,7 +57,7 @@ function PomoTimer(elem) {
     workAdd.disabled = true;
     workMinus.disabled = true;
 
-    message.innerHTML = "Enjoy your Break.";
+    message.innerHTML = "Break Time.";
     update();
   }
   this.sessionEnd = function () {
@@ -132,7 +134,7 @@ function PomoTimer(elem) {
   function startClock() {
     let clock = setInterval(function () {
       updateClock();
-    }, 1000);
+    }, 500);
   }
 
   function updateClock() {

@@ -19,12 +19,10 @@ let pomo = new PomoTimer(timer);
 
 function start() {
     pomo.start();
-    toggleBtn.textContent = 'Pause';
 }
 
 function stop() {
     pomo.stop();
-    toggleBtn.textContent = 'Start';
 }
 
 toggleBtn.addEventListener('click', function () {
