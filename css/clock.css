@@ -1,17 +1,43 @@
+/** clock effect **/
+
 #clock {
-  width: 330px;
-  height: 330px;
+  width: 380px;
+  height: 380px;
+  color: #ffb4ad;
   background-color: transparent;
-  border: 3px solid #ffad87;
+  border: 3px solid #ffb4ad;
   border-radius: 50%;
-  box-shadow: 0 0 10px 0 black;
   position: relative;
+  margin-bottom: 40px;
 }
+
+.neon-effect {
+  text-shadow: 0 0 4px #ada19a, 0 0 6px #ada19a, 0 0 8px #ada19a, 0 0 10px #ff7568, 0 0 12px #ff7568, 0 0 20px #ff7568;
+  -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.neon-effect:hover {
+  box-shadow: 0 0 5px #fff7f7, 0 0 10px #fff7f7, 0 0 15px #fff7f7, 0 0 20px #ff7568, 0 0 35px #ff7568, 0 0 40px #ff7568, 0 0 50px #ff7568;
+  text-shadow: 0 0 10px #fff7f7, 0 0 20px #fff7f7, 0 0 30px #fff7f7, 0 0 40px #ff7568, 0 0 70px #ff7568, 0 0 80px #ff7568, 0 0 100px #ff7568;
+  -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+/** end **/
+
+
+/** clock hands **/
 
 #secHand {
   width: 2px;
   height: 50%;
-  background-color: #ffad87;
+  background-color: #ffb4ad;
   transform-origin: 50% 80%;
   position: absolute;
   top: 10%;
@@ -22,13 +48,23 @@
 #minHand {
   width: 4px;
   height: 40%;
-  background-color: #ffad87;
+  background-color: #ffb4ad;
   transform-origin: 50% 80%;
   position: absolute;
   top: 18%;
   left: calc(50% - 1px);
   opacity: 0.4;
 }
+
+.handShadow {
+  box-shadow: 0 0 4px #ada19a, 0 0 6px #ada19a, 0 0 8px #ada19a, 0 0 10px #ff7568, 0 0 12px #ff7568, 0 0 20px #ff7568;
+}
+
+
+/** end **/
+
+
+/** clock numbers **/
 
 .num {
   height: 100%;
@@ -39,7 +75,7 @@
 .num div {
   width: 1em;
   line-height: 2em;
-  color: #ffad87;
+  color: #ffb4ad;
   text-align: center;
   vertical-align: middle;
 }
@@ -91,3 +127,6 @@
 .num12 {
   transform: rotate(0deg);
 }
+
+
+/** end **/

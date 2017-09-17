@@ -1,4 +1,5 @@
 const timer = document.getElementById('timer');
+const clock = document.getElementById('clock');
 const toggleBtn = document.getElementById('toggle');
 const resetBtn = document.getElementById('reset');
 
@@ -12,8 +13,8 @@ const restTimer = document.getElementById('restTimer');
 
 const message = document.getElementById('message');
 
-const secHand = document.getElementById("secHand").style;
-const minHand = document.getElementById("minHand").style;
+const secHand = document.getElementById("secHand");
+const minHand = document.getElementById("minHand");
 
 let pomo = new PomoTimer(timer);
 

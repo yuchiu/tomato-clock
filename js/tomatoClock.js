@@ -12,6 +12,9 @@ function PomoTimer(elem) {
   this.start = function () {
     if (!this.isOn) {
       toggleBtn.textContent = 'Pause';
+      clock.classList.add('neon-effect');
+      secHand.classList.add('handShadow');
+      minHand.classList.add('handShadow');
       interval = setInterval(update.bind(this), 10);
       offset = Date.now();
       this.isOn = true;
@@ -23,6 +26,9 @@ function PomoTimer(elem) {
   this.stop = function () {
     if (this.isOn) {
       toggleBtn.textContent = 'Start';
+      clock.classList.remove('neon-effect');
+      secHand.classList.remove('handShadow');
+      minHand.classList.remove('handShadow');
       clearInterval(interval);
       interval = null;
       this.isOn = false;
@@ -32,6 +38,9 @@ function PomoTimer(elem) {
   this.reset = function () {
     this.stop();
     toggleBtn.textContent = 'Start';
+    clock.classList.remove('neon-effect');
+    secHand.classList.remove('handShadow');
+    minHand.classList.remove('handShadow');
     time = 1500000;
     restTime = 300000;
     this.workTimerIsOn = true;
@@ -138,8 +147,8 @@ function PomoTimer(elem) {
   }
 
   function updateClock() {
-    secHand.transform = "rotate(" + calculateSec() * 6 + "deg)";
-    minHand.transform = "rotate(" + calculateMin() * 6 + "deg)";
+    secHand.style.transform = "rotate(" + calculateSec() * 6 + "deg)";
+    minHand.style.transform = "rotate(" + calculateMin() * 6 + "deg)";
   }
 
   function update() {

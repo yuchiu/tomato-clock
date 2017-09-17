@@ -1,10 +1,14 @@
 # tomato-clock
 
-User Story: I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.
+## Demo: 
+### Check out this site live on this [link](https://yuchiu.github.io/tomato-clock/)
 
-User Story: I can reset the clock for my next pomodoro.
+![Demo](https://github.com/yuchiu/tomato-clock/blob/master/demo.gif)
 
-User Story: I can customize the length of each pomodoro.
+## User Story: 
 
+- I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.
 
-![alt text](https://github.com/yuchiu/tomato-clock/blob/master/demo.gif)
+- I can reset the clock for my next pomodoro.
+
+- I can customize the length of each pomodoro.
