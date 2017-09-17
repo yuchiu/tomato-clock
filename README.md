@@ -3,7 +3,7 @@
 ## Demo: 
 ### Check out this site live on this [link](https://yuchiu.github.io/tomato-clock/)
 
-![Demo](https://github.com/yuchiu/tomato-clock/blob/master/demo.gif)
+![Demo](https://github.com/yuchiu/tomato-clock/blob/master/demopic.gif)
 
 ## User Story: 
 
