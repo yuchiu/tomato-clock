@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <title>Tomato Clock</title>
+    <title>Pomodoro Timer</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="description" content="Tomato Clock, Pomodoro Clock">
+    <meta name="description" content="Tomato Clock, Pomodoro Clock, Pomodoro Timer">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="google" content="notranslate">
 
@@ -22,97 +21,86 @@
 
     <div class="container">
         <!-- clock -->
-        <div class='row'>
-            <div class='display-4 mx-auto mt-5 page-title '>Tomato Clock</div>
-        </div>
-        <div class='row '>
-            <button type="button" class="btn mx-auto mt-5" id="toggle" style='border-radius:40px'>Start</button>
-        </div>
-        <div class='row'>
-            <div id="clock" class="mx-auto mt-5">
-                <div class="num num1">
-                    <div>|</div>
+        <div id="body-container">
+            <div class='row top-btn-container justify-content-center'>
+                <button type="button" class="btn mt-5 mr-3" id="toggle">Start</button>
+                <button type="button" class="btn mt-5 ml-3" id="reset">Reset</button>
+            </div>
+            <div class='row'>
+                <div id="clock" class="mx-auto mt-5">
+                    <div class="num num1">
+                        <div>●</div>
+                    </div>
+                    <div class="num num2">
+                        <div>●</div>
+                    </div>
+                    <div class="num num3">
+                        <div>●</div>
+                    </div>
+                    <div class="num num4">
+                        <div>●</div>
+                    </div>
+                    <div class="num num5">
+                        <div>●</div>
+                    </div>
+                    <div class="num num6">
+                        <div>●</div>
+                    </div>
+                    <div class="num num7">
+                        <div>●</div>
+                    </div>
+                    <div class="num num8">
+                        <div>●</div>
+                    </div>
+                    <div class="num num9">
+                        <div>●</div>
+                    </div>
+                    <div class="num num10">
+                        <div>●</div>
+                    </div>
+                    <div class="num num11">
+                        <div>●</div>
+                    </div>
+                    <div class="num num12">
+                        <div>●</div>
+                    </div>
+                    <div class='display-4 mx-auto mt-5' id="timer">25 : 00</div>
+                    <div id="minHand"></div>
+                    <div id="secHand"></div>
                 </div>
-                <div class="num num2">
-                    <div>|</div>
+            </div>
+            <!-- end -->
+            <!-- flex container-->
+            <div class='flexcontainer'>
+                <div class=''>
+                    <button type="button" class="btn operatorBtn display-4" id="restMinus">-</button>
                 </div>
-                <div class="num num3">
-                    <div>|</div>
+                <div class=''>
+                    <div class='lead timer-title' id="rest-title">Rest</div>
+                    <div id="restTimer">05 : 00</div>
                 </div>
-                <div class="num num4">
-                    <div>|</div>
+                <div class=''>
+                    <button type="button" class="btn operatorBtn" id="restAdd">+</button>
                 </div>
-                <div class="num num5">
-                    <div>|</div>
+
+                <div class=''>
+                    <button type="button" class="btn operatorBtn" id="workMinus">-</button>
                 </div>
-                <div class="num num6">
-                    <div>|</div>
+                <div class=''>
+                    <div class='lead  timer-title' id="work-title">Work</div>
+                    <div id="workTimer">25 : 00</div>
                 </div>
-                <div class="num num7">
-                    <div>|</div>
+                <div class=''>
+                    <button type="button" class="btn operatorBtn " id="workAdd">+</button>
                 </div>
-                <div class="num num8">
-                    <div>|</div>
-                </div>
-                <div class="num num9">
-                    <div>|</div>
-                </div>
-                <div class="num num10">
-                    <div>|</div>
-                </div>
-                <div class="num num11">
-                    <div>|</div>
-                </div>
-                <div class="num num12">
-                    <div>|</div>
-                </div>
-                <div class='display-4 mx-auto mt-5' id="timer">25 : 00</div>
-                <div id="minHand"></div>
-                <div id="secHand"></div>
             </div>
         </div>
         <!-- end -->
-        <!-- flex container-->
-        <div class='flexcontainer'>
-            <div class=''>
-                <button type="button" class="btn operatorBtn display-4" id="restMinus">-</button>
-            </div>
-            <div class=''>
-                <div class='lead timer-title'>Rest</div>
-                <div id="restTimer">05 : 00</div>
-            </div>
-            <div class=''>
-                <button type="button" class="btn operatorBtn" id="restAdd">+</button>
-            </div>
 
-
-            <div class=''>
-                <button type="button" class="btn" id="reset" style='border-radius:40px'>Reset</button>
-            </div>
-
-
-            <div class=''>
-                <button type="button" class="btn operatorBtn" id="workMinus">-</button>
-            </div>
-            <div class=''>
-                <div class='lead  timer-title'>Work</div>
-                <div id="workTimer">25 : 00</div>
-            </div>
-            <div class=''>
-                <button type="button" class="btn operatorBtn " id="workAdd">+</button>
-            </div>
-        </div>
-        <div class='row'>
-            <div class='display-4 mx-auto mt-5 mb-5 text-muted' id="message"></div>
-        </div>
-        <!-- end -->
-        <!-- footer -->
         <footer id="footer-container">
-            <a class="navbar-brand" id="footer-brand" href="#">Tomato Clock</a>
-            <p class="text-muted lead">&copy;2017. All Rights Reserved by Chiu.</p>
-            <a class="navbar-brand " href="https://github.com/yuchiu/tomato-clock/">github</a>
+            <a class="navbar-brand" id="footer-brand" href="#">Tomato Clock · Pomodoro Timer</a>
+            <p class="lead">&copy;Yu Chiu.</p>
         </footer>
-        <!-- end -->
     </div>
 
 </body>

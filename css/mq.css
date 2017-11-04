@@ -1,42 +1,24 @@
 /** Main Layout MQ **/
 
 @media only screen and (max-width: 1100px) {
-    #reset {
-        margin: 0 30px 0 30px;
-    }
     .flexcontainer {
-        font-size: 45px;
-    }
-    #message {
         font-size: 45px;
     }
 }
 
 @media only screen and (max-width: 800px) {
-    #reset {
-        margin: 0 15px 0 15px;
-    }
     .flexcontainer {
-        font-size: 38px;
-    }
-    #message {
         font-size: 38px;
     }
 }
 
 @media only screen and (max-width: 650px) {
-    #reset {
-        margin: 0 10px 0 10px;
-    }
     #footer-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     .flexcontainer {
-        font-size: 32px;
-    }
-    #message {
         font-size: 32px;
     }
 }
@@ -52,9 +34,6 @@
     #timer {
         font-size: 40px;
     }
-    #message {
-        font-size: 25px;
-    }
 }
 
 
@@ -63,18 +42,47 @@
 
 /** Clock MQ **/
 
+@media only screen and (max-width: 1200px) {
+    #clock {
+        width: 500px;
+        height: 500px;
+    }
+    .num div {
+      font-size: 1.2em;
+    }
+    #toggle, #reset{
+        font-size: 1.8em;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     #clock {
-        width: 330px;
-        height: 330px;
+        width: 400px;
+        height: 400px;
+    }
+    #footer-brand{
+        font-size:0.9em;
+    }
+    #toggle, #reset{
+        font-size: 1.6em;
     }
 }
 
 @media only screen and (max-width: 500px) {
     #clock {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         margin-bottom: 10px;
+    }
+    #restAdd{
+        margin-right:0;
+    }
+    
+    #workMinus{
+        margin-left:0;
+    }
+    #toggle, #reset{
+        font-size: 1.4em;
     }
 }
 

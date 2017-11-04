@@ -12,23 +12,16 @@ function PomoTimer(elem) {
   this.start = function () {
     if (!this.isOn) {
       toggleBtn.textContent = 'Pause';
-      clock.classList.add('neon-effect');
-      secHand.classList.add('handShadow');
-      minHand.classList.add('handShadow');
       interval = setInterval(update.bind(this), 10);
       offset = Date.now();
       this.isOn = true;
       startClock();
-      message.innerHTML = "Timer has Started."
     }
   };
 
   this.stop = function () {
     if (this.isOn) {
       toggleBtn.textContent = 'Start';
-      clock.classList.remove('neon-effect');
-      secHand.classList.remove('handShadow');
-      minHand.classList.remove('handShadow');
       clearInterval(interval);
       interval = null;
       this.isOn = false;
@@ -38,9 +31,6 @@ function PomoTimer(elem) {
   this.reset = function () {
     this.stop();
     toggleBtn.textContent = 'Start';
-    clock.classList.remove('neon-effect');
-    secHand.classList.remove('handShadow');
-    minHand.classList.remove('handShadow');
     time = 1500000;
     restTime = 300000;
     this.workTimerIsOn = true;
@@ -54,8 +44,6 @@ function PomoTimer(elem) {
     restMinus.disabled = false;
     toggleBtn.disabled = false;
 
-    message.innerHTML = "";
-
     update();
   };
 
@@ -66,14 +54,12 @@ function PomoTimer(elem) {
     workAdd.disabled = true;
     workMinus.disabled = true;
 
-    message.innerHTML = "Break Time.";
     update();
   }
   this.sessionEnd = function () {
     restAdd.disabled = true;
     restMinus.disabled = true;
     toggleBtn.disabled = true;
-    message.innerHTML = "Timer Ended."
   }
 
   this.workAddMin = function () {
