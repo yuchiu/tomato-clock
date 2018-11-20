@@ -1,158 +1,190 @@
 /** base layout **/
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+@import url("https://fonts.googleapis.com/css?family=Raleway:300");
 
 * {
-	margin: 0;
-	bottom: 0;
-	list-style: none;
-	box-sizing: border-box;
-	font-family: 'Raleway', sans-serif;
+  margin: 0;
+  bottom: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
-
 body {
-	color: #fff;
-	background-color: #24b598;
-	animation: bg-color 30s infinite;
-	-webkit-animation: bg-color 30s infinite;
+  color: #fff;
+  text-shadow: 1px 3px 5px #a7a7a7;
+  background-color: #ada2ef;
 }
 
-#body-container{
-min-height:95vh;
+#body-container {
+  min-height: 95vh;
 }
-#footer-container{
-	min-height:5vh;
+#footer-container {
+  min-height: 5vh;
 }
 
 @-webkit-keyframes bg-color {
-	0% { background-color: #24b598; }
-	20% { background-color: #ada2ef; }
-	40% { background-color: #3d91e5; }
-	60% { background-color: #915bc1; }
-	800% { background-color: #ada2ef; }
-	100% { background-color: #24b598; }
+  0% {
+    background-color: #24b598;
   }
-  @keyframes bg-color {
-	0% { background-color: #24b598; }
-	20% { background-color: #ada2ef; }
-	40% { background-color: #3d91e5; }
-	60% { background-color: #915bc1; }
-	800% { background-color: #ada2ef; }
-	100% { background-color: #24b598; }
+  20% {
+    background-color: #ada2ef;
   }
-
-.flexcontainer {
-	font-size: 60px;
-	font-weight: 100;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: row;
-	flex-direction: row;
-	-webkit-align-items: center;
-	align-items: center;
-	-webkit-justify-content: center;
-	justify-content: center;
+  40% {
+    background-color: #3d91e5;
+  }
+  60% {
+    background-color: #915bc1;
+  }
+  800% {
+    background-color: #ada2ef;
+  }
+  100% {
+    background-color: #24b598;
+  }
+}
+@keyframes bg-color {
+  0% {
+    background-color: #24b598;
+  }
+  20% {
+    background-color: #ada2ef;
+  }
+  40% {
+    background-color: #3d91e5;
+  }
+  60% {
+    background-color: #915bc1;
+  }
+  800% {
+    background-color: #ada2ef;
+  }
+  100% {
+    background-color: #24b598;
+  }
 }
 
+.flexcontainer {
+  font-size: 60px;
+  font-weight: 100;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
 
 /** end **/
-
 
 /** button **/
 
 .timer-title {
-	text-align: center;
-	opacity: 0.8;
+  text-align: center;
+  opacity: 0.8;
 }
 
 .btn {
-	color: #fff;
-	background-color: transparent;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: none;
-	display: inline-block;
-	cursor: pointer;
-	font-family: 'Raleway', sans-serif;
-	padding: 6px 15px;
-	text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+  padding: 6px 15px;
+  text-decoration: none;
 
-    -webkit-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -moz-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -ms-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    -o-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-    transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
-	border-radius: 3px;
-    box-shadow: #ffdd77 0 0px 0px 0px inset;
-}
-#restTimer, #workTimer{
-	font-size:0.85em;
-	opacity: 0.8;
+  text-shadow: 1px 3px 5px #777777;
+  -webkit-transition: all 1000ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+  -moz-transition: all 1000ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+  -ms-transition: all 1000ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+  -o-transition: all 1000ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+  transition: all 1000ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+  border-radius: 3px;
 }
 
-.btn:focus {
-	outline: none !important;
+#restTimer,
+#workTimer {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: none !important;
 }
 
 .btn:active {
-	outline: none !important;
-	position: relative;
-	top: 1px;
+  outline: none !important;
+  position: relative;
+  top: 1px;
 }
 
 .operatorBtn {
-	margin-top: 35px;
-	font-size: 0.7em;
-	font-weight: 100;
+  margin-top: 35px;
+  font-size: 0.7em;
+  font-weight: 100;
+  margin-right: 5px;
+  margin-left: 5px;
+  box-shadow: #4355e5 0 0px 0px 0px inset;
 }
 .operatorBtn:hover {
-	color: #fff;
-    box-shadow: #4355e5 0 0px 0px 40px inset;
+  color: #fff;
+  box-shadow: #9a8de2 0 0px 0px 40px inset;
 }
-#toggle, #reset{
-	font-size: 2em;
+#toggle {
+  margin-right: 5px;
+  margin-left: 5px;
+  box-shadow: #43ce7a 0 0px 0px 0px inset;
+  font-size: 2em;
 }
-#toggle:hover{
-	color: #fff;
-    box-shadow: #3aa364 0 0px 0px 40px inset;
+#reset {
+  margin-right: 5px;
+  margin-left: 5px;
+  box-shadow: #ec5d5d 0 0px 0px 0px inset;
+  font-size: 2em;
 }
-#reset:hover{
-	color: #fff;
-    box-shadow: #e07272 0 0px 0px 40px inset;
+#toggle:hover {
+  color: #fff;
+  box-shadow: #9a8de2 0 0px 0px 40px inset;
 }
-#restAdd{
-	margin-right:50px;
+#reset:hover {
+  color: #fff;
+  box-shadow: #9a8de2 0 0px 0px 40px inset;
+}
+#restAdd {
+  margin-right: 50px;
 }
 
-#workMinus{
-	margin-left:50px;
+#workMinus {
+  margin-left: 50px;
 }
 
 /** end **/
 
-
 /** footer **/
 
 #footer-container {
-	margin-bottom: 0;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: row;
-	flex-direction: row;
-	-webkit-align-items: space-between;
-	align-items: space-between;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
+  margin-bottom: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: space-between;
+  align-items: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 #footer-brand {
-	color: #fff;
+  color: #fff;
 }
 
 footer p {
-	padding-top: 12px;
-	font-size: 0.8em !important;
+  padding-top: 12px;
+  font-size: 0.8em !important;
 }
-
 
 /** end **/
